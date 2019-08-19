@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	{% if title %}
+		<title>Rate Service - {{ title }}</title>
+	{% else %}
+		<title>Please Rate Your Service</title>
+	{% endif %}
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+</head>
+<body>
+
+	<div class="container">
+		<img src="{{url_for('static',filename='img/logo.png')}}" alt="Lexus" class="logo">
+
+	<ul id="nav">
+	  <li><a class="active" href="{{url_for('core.home')}}">Home</a></li>
+	  <li><a href="{{url_for('core.send_feedback')}}">Send FeedBack</a></li>
+
+	</ul>
+
+	{% with messages = get_flashed_messages(with_categories=true) %}
+	  {% if messages %}
+	    {% for category, message in messages %}
+	      <div class="{{ category }}" style="margin-top:10px;">{{ message }}</div>
+	    {% endfor %}
+	   {% endif %}
+	{% endwith %}
+
+
+
+	{% block content %}
+
+	{% endblock content %}
+
+
+	</div>
+
+</body>
+</html>
