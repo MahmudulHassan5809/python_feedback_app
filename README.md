@@ -6,13 +6,14 @@
 
 ```bash
 # Add your DATABASE URI in app.py and your mail params in feedbackApp __init__.py
+```
 
 # DB Migration
-```
-$ flask db init
-$ flask db migrate
-$ flask db upgrade
-```
+  ```
+  $ flask db init
+  $ flask db migrate
+  $ flask db upgrade
+  ```
 
 # Install Dependencies
 ```
